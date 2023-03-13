@@ -35,10 +35,15 @@ ul{
 }
 
 body{
-      font-family: 'IBM Plex Sans KR', sans-serif;
+  font-family: 'Binggrae';
+  display: flex;
+  flex-direction: column;
+  margin: 0;
     }
 
-
+#root{
+  flex: 1;
+}
 
 `;
 
