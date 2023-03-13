@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Main from './pages/main/main';
-import Mypage from './pages/mypage/mypage';
-import Login from './pages/login/login';
-import Signup from './pages/signup/Signup';
+import Nav from './pages/layout/navbar/Navbar';
+import Footer from './pages/layout/footer/Footer';
+import Main from './pages/main/Main';
+import MyPage from './pages/mypage/MyPage';
+import Login from './pages/login/Login';
+import Signup from './pages/signup/SignUp';
 import CommunityMain from './pages/community/CommunityMain';
 import CommunityWrite from './pages/community/CommunityWrite';
 import CommunityDetail from './pages/community/CommunityDetail';
@@ -14,7 +16,7 @@ import CommunityDetail from './pages/community/CommunityDetail';
   사용자 정보 조회 : /users/:userId
   사용자 정보 수정 : /users/:userId
   사용자 정보 삭제 : /users/:userId
-  메인 페이지 : /service
+  메인 페이지 : /
   모임 메인 : /users/groups
   모임 상세 : /users/groups/:groupId
   모임 등록 : /users/groups/
@@ -27,15 +29,17 @@ import CommunityDetail from './pages/community/CommunityDetail';
 const Router = () => {
   return (
     <BrowserRouter>
+      <Nav />
       <Routes>
-        <Route path="/service" element={<Main />} />
+        <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Signup />} />
-        <Route path="/users/:userId" element={<Mypage />} />
+        <Route path="/users/:userId" element={<MyPage />} />
         <Route path="/users/groups" element={<CommunityMain />} />
         <Route path="/users/groups/:groupId" element={<CommunityDetail />} />
         <Route path="/users/groups/new" element={<CommunityWrite />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
