@@ -14,10 +14,11 @@ export default function MyPage() {
   const [joinList, setJoinList] = useState([]);
   const [myClubList, setMyClubList] = useState([]);
   const [myCommentList, setMyCommentList] = useState([]);
+  const userId = JSON.parse(localStorage.getItem('userData'))._id;
 
   // [ 사용자정보가져오기 ]
   // useEffect(() => {
-  //   axios.get(`http://localhost:5001/users/${userId}`).then(res => {
+  //   axios.get(`http://localhost:5050/users/${userId}`).then(res => {
   //     setCustomerInfo(res.data);
   //     setJoinList(res.data.join_list);
   //     setMyClubList(res.data.my_group_list);
@@ -28,7 +29,7 @@ export default function MyPage() {
   // [ 닉네임변경 ]
   // const submitChangedNickname = event => {
   //   axios
-  //     .patch(`http://localhost:5001/users/${userId}`, userNickname)
+  //     .patch(`http://localhost:5050/users/${userId}`, userNickname)
   //     .then(() => {
   //       alert('닉네임이 변경되었습니다.');
   //       setNickname('');
